@@ -1,0 +1,28 @@
+body{
+    font-family: Verdana;
+    text-align: center;
+    font-size: 2em;
+}
+
+#mybutton{
+    padding: 5px 25px;
+    font-size: 3em;
+    border-radius: 5p;
+    
+    border-radius: 5px;
+    
+}
+
+.mylabels{
+    font-size: 3em;
+}
+
+.Buttons {
+    color: white;
+    background-color:aqua;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+.Buttons:hover{
+    background-color: aquamarine;
+}
