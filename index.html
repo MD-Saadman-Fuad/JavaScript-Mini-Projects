@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Mini Projects - Portfolio</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -20,6 +19,28 @@
         
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0.3;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .card-hover:nth-child(1) { animation-delay: 0.1s; }
+        .card-hover:nth-child(2) { animation-delay: 0.2s; }
+        .card-hover:nth-child(3) { animation-delay: 0.3s; }
+        .card-hover:nth-child(4) { animation-delay: 0.4s; }
+        .card-hover:nth-child(5) { animation-delay: 0.5s; }
+        .card-hover:nth-child(6) { animation-delay: 0.6s; }
+        .card-hover:nth-child(7) { animation-delay: 0.7s; }
+        .card-hover:nth-child(8) { animation-delay: 0.8s; }
+        .card-hover:nth-child(9) { animation-delay: 0.9s; }
+        .card-hover:nth-child(10) { animation-delay: 1.0s; }
+        .card-hover:nth-child(11) { animation-delay: 1.1s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .card-hover:hover {
@@ -57,7 +78,6 @@
         }
         
         .project-image {
-            background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
             border-radius: 12px;
             height: 200px;
             display: flex;
@@ -66,6 +86,8 @@
             font-size: 3rem;
             color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
@@ -96,14 +118,14 @@
                     <i class="fas fa-mobile-alt mr-2"></i>Responsive
                 </span>
             </div>
-            <button class="bg-white text-gray-800 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition duration-300 pulse-slow">
+            <a href="#projects" class="inline-block bg-white text-gray-800 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition duration-300 pulse-slow">
                 <i class="fas fa-rocket mr-2"></i>Explore Projects
-            </button>
+            </a>
         </div>
     </header>
 
     <!-- Projects Grid -->
-    <main class="max-w-7xl mx-auto px-4 py-16">
+    <main class="max-w-7xl mx-auto px-4 py-16" id="projects">
         <div class="text-center mb-16">
             <h2 class="text-4xl md:text-5xl font-bold hero-text mb-4">Featured Projects</h2>
             <p class="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -111,8 +133,270 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
-            <!-- Projects will be dynamically inserted here -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Random Number Generator -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                <div class="project-image bg-gradient-to-r from-purple-400 to-pink-400">
+                    <i class="fas fa-dice"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Random Number Generator</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Generate random numbers within specified ranges with customizable parameters and instant results.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">DOM Manipulation</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Math.random()</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="./3. Random Number Generator/index.html" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold text-center hover:from-purple-600 hover:to-pink-600 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="#" class="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold text-center hover:border-gray-400 hover:bg-gray-50 transition duration-300">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Number Guessing Game -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                <div class="project-image bg-gradient-to-r from-blue-400 to-cyan-400">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Number Guessing Game</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Interactive guessing game where players try to find the secret number with hints and scoring system.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Game Logic</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">User Input</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Conditional Logic</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="./5. Number Guessing Game/index.html" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold text-center hover:from-purple-600 hover:to-pink-600 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="#" class="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold text-center hover:border-gray-400 hover:bg-gray-50 transition duration-300">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Temperature Converter -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                <div class="project-image bg-gradient-to-r from-red-400 to-orange-500">
+                    <i class="fas fa-thermometer-half"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Temperature Converter</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Convert temperatures between Celsius, Fahrenheit, and Kelvin with real-time calculation and validation.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Mathematical Operations</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Form Validation</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Real-time Updates</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="./6. Temperature Conversion Program/index.html" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold text-center hover:from-purple-600 hover:to-pink-600 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="#" class="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold text-center hover:border-gray-400 hover:bg-gray-50 transition duration-300">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dice Roller Program -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                <div class="project-image bg-gradient-to-r from-green-400 to-blue-500">
+                    <i class="fas fa-dice-six"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Dice Roller Program</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Virtual dice roller with multiple dice options, roll history, and animated dice effects.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Random Generation</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">CSS Animations</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Array Management</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="./7. Dice Roller Program/index.html" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold text-center hover:from-purple-600 hover:to-pink-600 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="#" class="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold text-center hover:border-gray-400 hover:bg-gray-50 transition duration-300">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Random Password Generator -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                <div class="project-image bg-gradient-to-r from-yellow-400 to-red-500">
+                    <i class="fas fa-key"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Random Password Generator</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Secure password generator with customizable length, character sets, and strength indicators.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Security</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">String Manipulation</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Character Sets</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="./8. Random Password Generator/index.html" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold text-center hover:from-purple-600 hover:to-pink-600 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="#" class="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold text-center hover:border-gray-400 hover:bg-gray-50 transition duration-300">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Clock -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                <div class="project-image bg-gradient-to-r from-indigo-400 to-purple-500">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Digital Clock</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Real-time digital clock with multiple time formats, timezone support, and customizable display.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Date Object</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">setInterval</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Time Formatting</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="./9. Digital Clock/index.html" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold text-center hover:from-purple-600 hover:to-pink-600 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="#" class="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold text-center hover:border-gray-400 hover:bg-gray-50 transition duration-300">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stop Watch Program -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                <div class="project-image bg-gradient-to-r from-pink-400 to-red-500">
+                    <i class="fas fa-stopwatch"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Stop Watch Program</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Precision stopwatch with start, stop, reset functionality and lap time recording capabilities.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Timing Functions</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">State Management</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Performance API</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="./10. Stop Watch Program/index.html" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold text-center hover:from-purple-600 hover:to-pink-600 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="#" class="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold text-center hover:border-gray-400 hover:bg-gray-50 transition duration-300">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calculator App -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                <div class="project-image" style="background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Calculator App</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Full-featured calculator with basic arithmetic operations, memory functions, and keyboard support.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Mathematical Operations</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Event Handling</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Calculator Logic</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="./12. Calculator App/index.html" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold text-center hover:from-purple-600 hover:to-pink-600 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="#" class="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold text-center hover:border-gray-400 hover:bg-gray-50 transition duration-300">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rock Paper Scissors Game -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                <div class="project-image" style="background: linear-gradient(135deg, #2dd4bf 0%, #10b981 100%);">
+                    <i class="fas fa-hand-rock"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Rock Paper Scissors Game</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Classic rock-paper-scissors game with computer AI, score tracking, and animated game results.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Game Logic</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">AI Algorithm</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Score Tracking</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="./17. RockPaperScissors-game/index.html" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold text-center hover:from-purple-600 hover:to-pink-600 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="#" class="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold text-center hover:border-gray-400 hover:bg-gray-50 transition duration-300">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pokemon Finder -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                <div class="project-image bg-gradient-to-r from-purple-500 to-pink-500">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Pokemon Finder</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Search and discover Pokemon with detailed stats, abilities, and images using the Pokemon API.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">API Integration</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Fetch API</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Data Visualization</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="./Pokemon-Finder/index.html" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold text-center hover:from-purple-600 hover:to-pink-600 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="#" class="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold text-center hover:border-gray-400 hover:bg-gray-50 transition duration-300">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather App -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                <div class="project-image bg-gradient-to-r from-blue-500 to-cyan-400">
+                    <i class="fas fa-cloud-sun"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Weather App</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Real-time weather application with location detection, forecasts, and beautiful weather animations.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Weather API</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Geolocation</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">Dynamic Content</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="./Weather-App/index.html" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold text-center hover:from-purple-600 hover:to-pink-600 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </a>
+                        <a href="#" class="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold text-center hover:border-gray-400 hover:bg-gray-50 transition duration-300">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -124,185 +408,3 @@
             <div class="flex justify-center space-x-6 mb-8">
                 <a href="https://github.com/MD-Saadman-Fuad" class="text-2xl hover:text-blue-400 transition duration-300">
                     <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/saadmanfuad/" class="text-2xl hover:text-blue-400 transition duration-300">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="md.saadman.fuad@gmail.com" class="text-2xl hover:text-blue-400 transition duration-300">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://www.facebook.com/Saadman.Fuad.1999/" class="text-2xl hover:text-blue-400 transition duration-300">
-                    <i class="fab fa-facebook"></i>
-                </a>
-            </div>
-            <p class="text-gray-500">&copy; 2025 JavaScript Mini Projects. Built with passion and lots of coffee ☕</p>
-        </div>
-    </footer>
-
-    <script>
-        // Your actual projects
-        const projects = [
-            {
-                title: "Random Number Generator",
-                description: "Generate random numbers within specified ranges with customizable parameters and instant results.",
-                tech: ["JavaScript", "DOM Manipulation", "Math.random()"],
-                icon: "fas fa-dice",
-                gradient: "from-purple-400 to-pink-400",
-                demoUrl: "./3. Random Number Generator/index.html",
-                codeUrl: "#"
-            },
-            {
-                title: "Number Guessing Game",
-                description: "Interactive guessing game where players try to find the secret number with hints and scoring system.",
-                tech: ["Game Logic", "User Input", "Conditional Logic"],
-                icon: "fas fa-bullseye",
-                gradient: "from-blue-400 to-cyan-400",
-                demoUrl: "./5. Number Guessing Game/index.html",
-                codeUrl: "#"
-            },
-            {
-                title: "Temperature Converter",
-                description: "Convert temperatures between Celsius, Fahrenheit, and Kelvin with real-time calculation and validation.",
-                tech: ["Mathematical Operations", "Form Validation", "Real-time Updates"],
-                icon: "fas fa-thermometer-half",
-                gradient: "from-red-400 to-orange-500",
-                demoUrl: "./6. Temperature Conversion Program/index.html",
-                codeUrl: "#"
-            },
-            {
-                title: "Dice Roller Program",
-                description: "Virtual dice roller with multiple dice options, roll history, and animated dice effects.",
-                tech: ["Random Generation", "CSS Animations", "Array Management"],
-                icon: "fas fa-dice-six",
-                gradient: "from-green-400 to-blue-500",
-                demoUrl: "./7. Dice Roller Program/index.html",
-                codeUrl: "#"
-            },
-            {
-                title: "Random Password Generator",
-                description: "Secure password generator with customizable length, character sets, and strength indicators.",
-                tech: ["Security", "String Manipulation", "Character Sets"],
-                icon: "fas fa-key",
-                gradient: "from-yellow-400 to-red-500",
-                demoUrl: "./8. Random Password Generator/index.html",
-                codeUrl: "#"
-            },
-            {
-                title: "Digital Clock",
-                description: "Real-time digital clock with multiple time formats, timezone support, and customizable display.",
-                tech: ["Date Object", "setInterval", "Time Formatting"],
-                icon: "fas fa-clock",
-                gradient: "from-indigo-400 to-purple-500",
-                demoUrl: "./9. Digital Clock/index.html",
-                codeUrl: "#"
-            },
-            {
-                title: "Stop Watch Program",
-                description: "Precision stopwatch with start, stop, reset functionality and lap time recording capabilities.",
-                tech: ["Timing Functions", "State Management", "Performance API"],
-                icon: "fas fa-stopwatch",
-                gradient: "from-pink-400 to-red-500",
-                demoUrl: "./10. Stop Watch Program/index.html",
-                codeUrl: "#"
-            },
-            {
-                title: "Calculator App",
-                description: "Full-featured calculator with basic arithmetic operations, memory functions, and keyboard support.",
-                tech: ["Mathematical Operations", "Event Handling", "Calculator Logic"],
-                icon: "fas fa-calculator",
-                gradient: "from-cyan-400 to-blue-500",
-                demoUrl: "./12. Calculator App/index.html",
-                codeUrl: "#"
-            },
-            {
-                title: "Rock Paper Scissors Game",
-                description: "Classic rock-paper-scissors game with computer AI, score tracking, and animated game results.",
-                tech: ["Game Logic", "AI Algorithm", "Score Tracking"],
-                icon: "fas fa-hand-rock",
-                gradient: "from-teal-400 to-green-500",
-                demoUrl: "./17. RockPaperScissors-game/index.html",
-                codeUrl: "#"
-            },
-            {
-                title: "Pokemon Finder",
-                description: "Search and discover Pokemon with detailed stats, abilities, and images using the Pokemon API.",
-                tech: ["API Integration", "Fetch API", "Data Visualization"],
-                icon: "fas fa-search",
-                gradient: "from-purple-500 to-pink-500",
-                demoUrl: "./Pokemon-Finder/index.html",
-                codeUrl: "#"
-            },
-            {
-                title: "Weather App",
-                description: "Real-time weather application with location detection, forecasts, and beautiful weather animations.",
-                tech: ["Weather API", "Geolocation", "Dynamic Content"],
-                icon: "fas fa-cloud-sun",
-                gradient: "from-blue-500 to-cyan-400",
-                demoUrl: "./Weather-App/index.html",
-                codeUrl: "#"
-            }
-        ];
-
-        function createProjectCard(project) {
-            return `
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
-                    <div class="project-image bg-gradient-to-r ${project.gradient}">
-                        <i class="${project.icon}"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">${project.title}</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">${project.description}</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            ${project.tech.map(tech => `
-                                <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
-                                    ${tech}
-                                </span>
-                            `).join('')}
-                        </div>
-                        <div class="flex space-x-4">
-                            <a href="${project.demoUrl}" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-lg font-semibold text-center hover:from-purple-600 hover:to-pink-600 transition duration-300">
-                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
-                            </a>
-                            <a href="${project.codeUrl}" class="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold text-center hover:border-gray-400 hover:bg-gray-50 transition duration-300">
-                                <i class="fab fa-github mr-2"></i>Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        function renderProjects() {
-            const projectsGrid = document.getElementById('projectsGrid');
-            projectsGrid.innerHTML = projects.map(createProjectCard).join('');
-        }
-
-        // Smooth scrolling for explore button
-        document.querySelector('button').addEventListener('click', () => {
-            document.querySelector('main').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
-        });
-
-        // Initialize
-        renderProjects();
-
-        // Add some interactive animations on scroll
-        window.addEventListener('scroll', () => {
-            const cards = document.querySelectorAll('.card-hover');
-            cards.forEach(card => {
-                const cardTop = card.getBoundingClientRect().top;
-                const cardVisible = cardTop < window.innerHeight * 0.8;
-                
-                if (cardVisible) {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                } else {
-                    card.style.opacity = '0.3';
-                    card.style.transform = 'translateY(20px)';
-                }
-            });
-        });
-    </script>
-</body>
-</html>
